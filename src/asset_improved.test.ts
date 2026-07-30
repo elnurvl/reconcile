@@ -25,4 +25,8 @@ describe("function", () => {
     it("works with arbitrary number of arguments", () => {
         expect(isSumEqualsToZero(3, -2, -0.5, -0.4999999999, -0.0000000001)).toBe(true)
     })
+
+    it("does not break with no args passed", () => {
+        expect(isSumEqualsToZero()).toBe(true)
+    })
 })
