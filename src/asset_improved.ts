@@ -1,9 +1,7 @@
 export function isSumEqualsToZero(...args: number[]): boolean {
     let precision = 0
 
-    args.forEach(a => {
-        precision = Math.max(getPrecision(a), precision)
-    })
+    precision = Math.max(...args.map(getPrecision))
 
     let scale = 10 ** precision
 
