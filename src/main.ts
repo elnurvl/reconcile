@@ -1,4 +1,4 @@
-import { Asset, isSumEqualToZero } from './asset'
+import { Asset, isSumEqualsToZero } from './asset_improved'
 
 function validateInput(val: unknown) {
     if (Number.isNaN(val)) {
@@ -7,11 +7,12 @@ function validateInput(val: unknown) {
 }
 
 const [a, b, c] = process.argv.slice(2).map((arg) => {
-    if (Number.isNaN(Number(arg))) {
+    let r = Number(arg)
+    if (Number.isNaN(r)) {
         console.log("You must provide a number.")
         process.exit(1)
     }
-    return Asset.make(arg)
+    return r
 })
 
 if (a === undefined || b === undefined || c === undefined) {
@@ -19,4 +20,4 @@ if (a === undefined || b === undefined || c === undefined) {
     process.exit(1)
 }
 
-console.log(isSumEqualToZero(a, b, c))
+console.log(isSumEqualsToZero(a, b, c))
