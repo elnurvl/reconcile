@@ -1,0 +1,15 @@
+{
+  "name": "interviews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "^5.5.3",
+    "vitest": "^4.1.10"
+  },
+  "private": true
+}
