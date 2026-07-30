@@ -20,5 +20,9 @@ function getPrecision(a: number): number {
     if (Number.isInteger(a)) {
         return 0
     }
-    return a.toString().split(".")[1].length
+
+    const [coefficient, exponent = "0"] = a.toString().split("e")
+    const fraction = coefficient.split(".")[1] ?? ""
+
+    return Math.max(0, fraction.length - Number(exponent))
 }
