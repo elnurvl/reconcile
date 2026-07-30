@@ -1,17 +1,21 @@
-export function isSumEqualsToZero(...args: number[]): boolean {
+export function isSumEqualsToZero(...args: (number | bigint)[]): boolean {
     let precision = 0
 
-    precision = Math.max(...args.map(getPrecision))
+    precision = Math.max(0, ...args.map(a => typeof a === 'bigint' ? 0 : getPrecision(a)))
 
-    let scale = 10 ** precision
+    let scale = 10n ** BigInt(precision)
 
-    let sum = 0
+    let sum = 0n
 
     args.forEach(a => {
-        sum += Math.round(a * scale)
+        if (typeof a === 'bigint') {
+            sum += a * scale
+        } else {
+            sum += BigInt(Math.round(a * Number(scale)))
+        }
     })
 
-    return sum === 0
+    return sum === 0n
 }
 
 function getPrecision(a: number): number {
