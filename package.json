@@ -1,7 +1,9 @@
 {
   "name": "@elnurh/reconcile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utilities for decimal arithmetics.",
+  "author": "Elnur Hajiyev",
+  "homepage": "https://github.com/elnurvl/reconcile",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
