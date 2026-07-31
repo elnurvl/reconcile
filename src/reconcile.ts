@@ -34,6 +34,6 @@ export class Asset {
     }
 }
 
-export function isSumEqualToZero(a: Asset, b: Asset, c: Asset): boolean {
+export function isSumEqualToZeroLegacy(a: Asset, b: Asset, c: Asset): boolean {
     return a.plus(b).plus(c).isZero()
 }

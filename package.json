@@ -1,17 +1,46 @@
 {
-  "name": "interviews",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/main.js",
+  "name": "@elnurh/reconcile",
+  "version": "0.1.0",
+  "description": "Utilities for decimal arithmetics.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/index.d.ts.map",
+    "dist/reconcile.js",
+    "dist/reconcile.d.ts",
+    "dist/reconcile.d.ts.map",
+    "dist/reconcile_improved.js",
+    "dist/reconcile_improved.d.ts",
+    "dist/reconcile_improved.d.ts.map"
+  ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest"
+  },
+  "keywords": [
+    "decimal",
+    "sum",
+    "zero"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
   },
   "devDependencies": {
     "@types/node": "^26.1.2",
     "typescript": "^5.5.3",
     "vitest": "^4.1.10"
   },
-  "private": true
+  "private": false
 }

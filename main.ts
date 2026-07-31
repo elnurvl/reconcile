@@ -1,4 +1,4 @@
-import { isSumEqualsToZero } from './asset_improved'
+import { isSumEqualsToZero } from './src/reconcile_improved'
 
 function validateInput(val: unknown) {
     if (Number.isNaN(val)) {

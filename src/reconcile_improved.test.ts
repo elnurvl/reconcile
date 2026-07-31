@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { isSumEqualsToZero, Asset } from './asset_improved'
+import { isSumEqualsToZero, Asset } from './reconcile_improved'
 
 describe("function", () => {
     it("gives false if sum of numbers is not zero", () => {
@@ -28,6 +28,10 @@ describe("function", () => {
 
     it("works with bigintegers", () => {
         expect(isSumEqualsToZero(3n, -3n)).toBe(true)
+    })
+
+    it("works with mixture of bigintegers and numbers", () => {
+        expect(isSumEqualsToZero(3n, -3)).toBe(true)
     })
 
     it("does not break with no args passed", () => {
